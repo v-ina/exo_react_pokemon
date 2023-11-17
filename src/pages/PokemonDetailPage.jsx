@@ -1,8 +1,8 @@
+import { useParams } from "react-router-dom";
 import Header from "../components/Header"
-import './HomePage.scss'
-import { Link } from "react-router-dom";
 
-function HomePage(){
+function PokemonDetailPage(){
+
     const pokemons = [
         {
           id: 1,
@@ -69,31 +69,21 @@ function HomePage(){
         },
       ];
 
-      const pokemonInTeam = pokemons.filter(pokemon=>pokemon.isInTeam)
+    const {pokemonID} = useParams();
 
-      const nametagChange =(e) =>{
-        let tg = e.currentTarget
-        console.log(`${tg.alt} is in my team`);
-    }
+    const pokemonChoiced = pokemons.find((pokemon)=>{
+        return pokemon.id == pokemonID
+    })
 
-    console.log(pokemonInTeam);
+
     return(
-      <>        
-        <Header />
-        <main>
-          <h2>pokemon In Team!</h2>
-            {pokemonInTeam.map((pokemon)=>{
-              return (
-                <div>
-                  <Link to={`/pokemonlist/${pokemon.id}/details`}>
-                  <img src={pokemon.img} alt={pokemon.name} onClick={nametagChange} />
-                  <p>{pokemon.name}</p>
-                  </Link>
-                </div>
-              )
-            })}
-        </main>
-      </>
+        <>
+            <Header />
+            <h1> Detail du pokemon : </h1>
+            <h2>{pokemonChoiced.name}</h2>
+            <div><img src={pokemonChoiced.img} alt={pokemonChoiced.name} /></div>
+        </>
     )
 }
-export default HomePage
+
+export default PokemonDetailPage

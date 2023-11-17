@@ -80,12 +80,12 @@ function Pokemonlist(){
         <main>
           <h2>Every pokemons are here!</h2>
             {pokemons.map(pokemon=>{
-                return (
-                    <div>
-                        <img src={pokemon.img} alt={pokemon.name} onClick={nametagChange} />
-                        <p>{pokemon.name}</p>
-                    </div>
-                )
+              return (
+                <div>
+                  <img src={pokemon.img} alt={pokemon.name} onClick={nametagChange} />
+                  <p>{pokemon.name}</p>
+                </div>
+              )
             })}
         </main>
         </>
