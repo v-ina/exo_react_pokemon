@@ -3,6 +3,7 @@
 // Stylisez vos page (rapidement) en utilisant sass
 
 import Header from "../components/Header"
+import './HomePage.scss'
 
 function HomePage(){
 

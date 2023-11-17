@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-
+import './PokemonlistPage.scss'
 
 function Pokemonlist(){
 
@@ -69,12 +69,22 @@ function Pokemonlist(){
         },
       ];
 
+    const nametagChange =(e) =>{
+        let tg = e.currentTarget
+        console.log(`${tg.alt} is clicked`);
+    }
+
     return(
         <>
         <Header />
         <main>
             {pokemons.map(pokemon=>{
-                return <p>{pokemon.name}</p>
+                return (
+                    <div>
+                        <img src={pokemon.img} alt={pokemon.name} onClick={nametagChange} />
+                        <p>{pokemon.name}</p>
+                    </div>
+                )
             })}
         </main>
         </>
