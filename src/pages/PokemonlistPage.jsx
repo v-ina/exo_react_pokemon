@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import './PokemonlistPage.scss'
+import { Link } from "react-router-dom";
 
 function Pokemonlist(){
 
@@ -81,9 +82,12 @@ function Pokemonlist(){
           <h2>Every pokemons are here!</h2>
             {pokemons.map(pokemon=>{
               return (
+
                 <div>
-                  <img src={pokemon.img} alt={pokemon.name} onClick={nametagChange} />
-                  <p>{pokemon.name}</p>
+                    <Link to={`/pokemonlist/${pokemon.id}/details`}>
+                    <img src={pokemon.img} alt={pokemon.name} onClick={nametagChange} />
+                    <p>{pokemon.name}</p>
+                  </Link>
                 </div>
               )
             })}

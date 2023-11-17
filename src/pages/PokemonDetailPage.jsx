@@ -70,10 +70,18 @@ function PokemonDetailPage(){
       ];
 
     const {pokemonID} = useParams();
+    // const {pokemonID , name} = userParams() 도 가능 오마이갓. 여러 id를 한번에 불러오기 ㄷ ㄷ
 
     const pokemonChoiced = pokemons.find((pokemon)=>{
-        return pokemon.id == pokemonID
+      return pokemon.id == pokemonID
     })
+
+    
+    // const params = useParams();
+    // const pokemonChoiced = pokemons.find((pokemon)=>{
+    //     return pokemon.id == params.pokemonID
+    // })
+    // 위와 같은거임. 모든 정보를 우리는 객체상태로 불러온 것일 뿐!
 
 
     return(
