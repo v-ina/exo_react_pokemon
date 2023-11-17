@@ -74,18 +74,25 @@ function HomePage(){
       ];
 
       const pokemonInTeam = pokemons.filter(pokemon=>pokemon.isInTeam)
+      const nametagChange =(e) =>{
+        let tg = e.currentTarget
+        console.log(`${tg.alt} is clicked`);
+    }
+
 
     return(
         <>        
             <Header />
             <main>
-                <p>
-                    {pokemonInTeam.map((pokemon)=>{
-                        return (
+                <h2>pokemon In Team!</h2>
+                  {pokemonInTeam.map((pokemon)=>{
+                      return (
+                          <div>
+                            <img src={pokemon.img} alt={pokemon.name} onClick={nametagChange} />
                             <p>{pokemon.name}</p>
-                        )
-                    })}
-                </p>
+                          </div>
+                      )
+                  })}
             </main>
         </>
 

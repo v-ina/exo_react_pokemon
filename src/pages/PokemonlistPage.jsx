@@ -78,6 +78,7 @@ function Pokemonlist(){
         <>
         <Header />
         <main>
+          <h2>Every pokemons are here!</h2>
             {pokemons.map(pokemon=>{
                 return (
                     <div>
